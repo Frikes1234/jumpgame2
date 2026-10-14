@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101827">
+  <title>Jump Gap — Mini App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">БЕСКОНЕЧНЫЙ ПЛАТФОРМЕР</div>
+        <h1>Jump Gap</h1>
+      </div>
+      <div class="score-box"><span>СЧЁТ</span><strong id="score">0</strong></div>
+    </header>
+
+    <section class="game-wrap" aria-label="Игровое поле">
+      <canvas id="game" aria-label="Платформер"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="overlay-card">
+          <div class="emoji" id="overlayEmoji">🚀</div>
+          <h2 id="overlayTitle">Готов прыгать?</h2>
+          <p id="overlayText">Зажми кнопку, чтобы зарядить прыжок. Отпусти, чтобы прыгнуть через пропасть.</p>
+          <button id="startBtn" class="primary">Начать игру</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="hint-row">
+        <span>Зажми и держи</span><span>Отпусти — прыжок!</span>
+      </div>
+      <div class="charge-track"><div id="chargeFill"></div></div>
+      <button id="jumpBtn" class="jump-button" disabled>
+        <span class="jump-icon">↑</span>
+        <span id="jumpLabel">ПРЫЖОК</span>
+      </button>
+      <p class="small-note">Чем дольше держишь, тем дальше прыгнешь. Не отпускай слишком рано!</p>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
